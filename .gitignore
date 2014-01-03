@@ -158,3 +158,5 @@ $RECYCLE.BIN/
 # Kendo javascript and css files
 Content/kendo/
 Scripts/kendo/
+Esk.Blog.KendoUI/Content/kendo
+Esk.Blog.KendoUI/Scripts/kendo

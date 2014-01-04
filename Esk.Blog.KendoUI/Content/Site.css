@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+	/*background: center top repeat-y url('images/nycbuildingbg2.jpg');*/
+	background-color: #fbfbfb;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -39,4 +41,101 @@ input[type="checkbox"].input-validation-error {
 
 .validation-summary-valid {
     display: none;
+}
+
+.marginTop15 { margin-top: 15px; }
+.marginTop5Pct { margin-top: 5%; }
+.marginTop10Pct { margin-top: 10%; }
+.marginBottom10Pct { margin-bottom: 10%; }
+.marginBottom5Pct { margin-bottom: 5%; }
+.marginBottom2Pct { margin-bottom: 2%; }
+.marginBottom15 { margin-bottom: 15px; }
+
+
+/* infocard */
+.infocard {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background-color: #fefefe;
+  border: 1px solid #e6e6e6;
+}
+
+.infocard h1,
+.infocard .h1 {
+  line-height: 1;
+  color: inherit;
+}
+
+.infocard p {
+  line-height: 1.4;
+}
+
+.container .infocard {
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px #e1e1e1;
+}
+
+.infocard .container {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .infocard {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .container .infocard {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  .infocard h1,
+  .infocard .h1 {
+    font-size: 63px;
+  }
+}
+
+/* Link icons */
+a.footericonlink {
+	display:inline-block;
+	text-indent: 15px;
+}
+a[href*='stackoverflow.com'].footericonlink {
+	background: transparent url('images/stackoverflow-32-gray.png') center left no-repeat;
+}
+
+a[href*='github.com'].footericonlink {
+	background: transparent url('images/github-32-gray.png') center left no-repeat;
+}
+
+a[href*='twitter.com'].footericonlink {
+	background: transparent url('images/twitter-32-gray.png') center left no-repeat;
+}
+
+a[href*='blog.essencework.com'].footericonlink {
+	background: transparent url('images/tumblr-32-gray.png') center left no-repeat;
+}
+
+/* Dataviz */
+.dcProgress-text
+{
+	position:absolute;
+	display:block;
+	z-index:1;
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:48px;
+	letter-spacing: -1px;	
+}
+
+.dcProgress-text-1digit { left:75px; top:28px; }
+.dcProgress-text-2digit { left:60px; top:28px;}
+.dcProgress-text-3digit { left:45px; top:28px; }
+.dcProgress-text-pct { font-size:36px; }
+
+.testColor { 
+	border-radius: 5px;
+	box-shadow: 0px 0px 8px #f1f1f1;
 }

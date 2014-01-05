@@ -1,19 +1,64 @@
-﻿
-<div class="row marginTop15 marginBottom5Pct">
+﻿@{
+    ViewBag.Title = "Realtime Donut Progress Chart";
+}
+
+<div class="row marginTop5Pct marginBottom2Pct">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <div class="infocard">
+            <div class="row marginBottom15">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8"><div id="rtDonutChart1"></div></div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
     </div>
     <div class="col-md-4">
-        <div id="gauge"></div>
+        <div class="infocard">
+            <div class="row marginBottom15">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8"><div id="rtDonutChart2"></div></div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
     </div>
     <div class="col-md-4">
-        <div id="datePicker"></div>
+        <div class="infocard">
+            <div class="row marginBottom15">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8"><div id="rtDonutChart3"></div></div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row marginTop3Pct marginBottom2Pct">
+    <div class="col-md-4">
+        <div class="infocard">
+            <div class="row marginBottom15">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8"><div id="rtDonutChart4"></div></div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="infocard">
+            <div class="row marginBottom15">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8"><div id="rtDonutChart5"></div></div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="infocard">
+            <div class="row marginBottom15">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8"><div id="rtDonutChart6"></div></div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -21,8 +66,24 @@
 {
     <script>
         $(document).ready(function () {
-            $('#datePicker').kendoDatePicker();
-            $('#gauge').kendoRadialGauge();
+            var rtChart = ESK.Blog.Dataviz.DonutProgressChart;
+            rtChart.create($('#rtDonutChart1'), 'Image Processing', '');
+            rtChart.testRealTimeUpdate($('#rtDonutChart1'), 700, 10);
+
+            rtChart.create($('#rtDonutChart2'), 'Audio Processing', '');
+            rtChart.testRealTimeUpdate($('#rtDonutChart2'), 400, 10);
+
+            rtChart.create($('#rtDonutChart3'), 'Video Processing', '');
+            rtChart.testRealTimeUpdate($('#rtDonutChart3'), 200, 10);
+
+            rtChart.create($('#rtDonutChart4'), '3D model Rendering', '');
+            rtChart.testRealTimeUpdate($('#rtDonutChart4'), 100, 10);
+
+            rtChart.create($('#rtDonutChart5'), 'Texture Rendering', '');
+            rtChart.testRealTimeUpdate($('#rtDonutChart5'), 600, 10);
+
+            rtChart.create($('#rtDonutChart6'), 'Light Processing', '');
+            rtChart.testRealTimeUpdate($('#rtDonutChart6'), 500, 10);
         })
     </script>
 }

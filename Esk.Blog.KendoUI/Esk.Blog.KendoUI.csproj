@@ -357,6 +357,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\eswkchartdemo - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\eswkchartdemo - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\dashboard\dashboard-chart.js" />
     <Content Include="Scripts\dashboard\dashboard-core.js" />

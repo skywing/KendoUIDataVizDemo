@@ -158,5 +158,8 @@ $RECYCLE.BIN/
 # Kendo javascript and css files
 Content/kendo/
 Scripts/kendo/
-Esk.Blog.KendoUI/Content/kendo
-Esk.Blog.KendoUI/Scripts/kendo
+Esk.Blog.KendoUI/Content/kendo/
+Esk.Blog.KendoUI/Scripts/kendo/
+
+# Windows Azure publishing profile
+Esk.Blog.KendoUI/Properties/PublishProfiles/

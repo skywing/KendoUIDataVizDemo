@@ -44,6 +44,7 @@ input[type="checkbox"].input-validation-error {
 }
 
 .marginTop15 { margin-top: 15px; }
+.marginTop3Pct { margin-top: 3%; }
 .marginTop5Pct { margin-top: 5%; }
 .marginTop10Pct { margin-top: 10%; }
 .marginBottom10Pct { margin-bottom: 10%; }
@@ -134,8 +135,3 @@ a[href*='blog.essencework.com'].footericonlink {
 .dcProgress-text-2digit { left:60px; top:28px;}
 .dcProgress-text-3digit { left:45px; top:28px; }
 .dcProgress-text-pct { font-size:36px; }
-
-.testColor { 
-	border-radius: 5px;
-	box-shadow: 0px 0px 8px #f1f1f1;
-}

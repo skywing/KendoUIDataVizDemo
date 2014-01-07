@@ -2,7 +2,7 @@
     ViewBag.Title = "Realtime Donut Progress Chart";
 }
 
-<div class="row marginTop5Pct marginBottom2Pct">
+@*<div class="row marginTop5Pct marginBottom2Pct">
     <div class="col-md-4">
         <div class="infocard">
             <div class="row marginBottom15">
@@ -60,30 +60,40 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 
 @section scripts
 {
     <script>
-        $(document).ready(function () {
+        $(function () {
+            var dashboard = $.connection.serviceDashboard,
+                infocardTemplate = '<div class="col-md-4"><div class="infocard"><div class="row marginBottom15"><div class="col-sm-2"></div><div class="col-sm-8"><div id="{chartId}"></div></div><div class="col-sm-2"></div></div></div></div>',
+                rowTemplate = '<div class="row marginTop3Pct"></div>',
+                $layoutBodyContainer = $('#layout-body-container');
             var rtChart = ESK.Blog.Dataviz.DonutProgressChart;
-            rtChart.create($('#rtDonutChart1'), 'Image Processing', '');
-            rtChart.testRealTimeUpdate($('#rtDonutChart1'), 700, 10);
 
-            rtChart.create($('#rtDonutChart2'), 'Audio Processing', '');
-            rtChart.testRealTimeUpdate($('#rtDonutChart2'), 400, 10);
+            function init() {
+                dashboard.server.getAllServiceStatuses().done(function (statuses) {
+                    console.log("get all services done.");
+                    ct = 0;
+                    $layoutBodyContainer.empty();
+                    $.each(statuses, function () {
+                        if (ct % 3 === 0)
+                        {
+                            $layoutBodyContainer.append(rowTemplate);
+                        }
+                        $layoutBodyContainer.children('div[class="row marginTop3Pct"]:last').append(infocardTemplate.replace('{chartId}', this.Id));
+                        rtChart.create($('#' + this.Id), this.Title, '');
+                        ct++;
+                    });
+                });
+            }
 
-            rtChart.create($('#rtDonutChart3'), 'Video Processing', '');
-            rtChart.testRealTimeUpdate($('#rtDonutChart3'), 200, 10);
+            dashboard.client.updateServiceStatus = function (status) {
+                rtChart.updateProgress($('#' + status.Id), status.Current, status.Error);
+            }
 
-            rtChart.create($('#rtDonutChart4'), '3D model Rendering', '');
-            rtChart.testRealTimeUpdate($('#rtDonutChart4'), 100, 10);
-
-            rtChart.create($('#rtDonutChart5'), 'Texture Rendering', '');
-            rtChart.testRealTimeUpdate($('#rtDonutChart5'), 600, 10);
-
-            rtChart.create($('#rtDonutChart6'), 'Light Processing', '');
-            rtChart.testRealTimeUpdate($('#rtDonutChart6'), 500, 10);
+            $.connection.hub.start().done(init);
         })
     </script>
 }

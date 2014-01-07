@@ -10,9 +10,11 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquerysignalr")
     @Scripts.Render("~/bundles/bootstrap")
     <script src="http://cdn.kendostatic.com/2013.3.1119/js/kendo.all.min.js"></script>
     <script src="http://cdn.kendostatic.com/2013.3.1119/js/kendo.aspnetmvc.min.js"></script>
+    <script src='@Url.Content("~/")signalr/hubs'></script>
     @Scripts.Render("~/bundles/kendo")
     @Scripts.Render("~/bundles/dashboard-core")
     <script>
@@ -39,7 +41,7 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div id="layout-body-container" class="container body-content">
         @RenderBody()
     </div>
     <hr />
